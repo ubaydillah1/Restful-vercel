@@ -4,12 +4,15 @@ const cors = require("cors");
 
 require("dotenv").config();
 
+app.options("*", cors());
+
 app.use(
   cors({
     origin: ["https://explore-hd-site.webflow.io", "http://localhost:3000"],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
     credentials: true,
+    preflightContinue: false,
     optionsSuccessStatus: 200,
   })
 );
