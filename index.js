@@ -8,7 +8,7 @@ app.options("*", cors());
 
 app.use(
   cors({
-    origin: ["https://explore-hd-site.webflow.io", "http://localhost:3000"],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
     credentials: true,
