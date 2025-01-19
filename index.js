@@ -17,7 +17,10 @@ app.use(
   })
 );
 app.use(express.json());
+app.use("/assets", express.static("public/images"));
+
 const bookRouter = require("./routes/book.router");
+const upload = require("./middleware/multer");
 
 app.use("/api", bookRouter);
 
